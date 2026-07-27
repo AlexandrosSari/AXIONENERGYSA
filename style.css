@@ -1,0 +1,458 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: whitesmoke;/*bad solution, ewwwww*/
+    font-family: "Montserrat", sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*NAVBAR*/
+nav{
+    width: 100%;
+    background-color: rgb(241, 241, 234);
+    position: fixed;
+    z-index: 10000;
+    top:0;
+    left: 0;
+}
+
+.navbar{
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-logo img{
+    height: 80px;
+    width: auto;
+}
+
+.navbar-options{
+    display: flex;
+    gap: 35px;
+    margin-left: auto;
+}
+
+.navbar-options a{
+    text-decoration: none;
+    color: rgb(85, 122, 93);
+    font-weight: bold;
+}
+
+.navbar-options a:hover{
+    color: grey;
+}
+
+    /*BURGER*/
+.menu-toggle{
+    display:none;
+}
+
+
+
+/*HERO*/
+.hero-cover{
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    height: 550px;
+}
+
+.hero{
+    position: relative;
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: self-start;
+    flex-direction: column;
+    z-index: 1;
+
+}
+
+.nav-flag-hero{
+    display: none;
+}
+
+.hero-cover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/hero.jpg')center center / cover no-repeat;
+    filter: brightness(80%);
+    z-index: -1;
+}
+
+
+.hero img{
+    filter: brightness(120%);
+    max-width: 100%;  /* η εικόνα δεν ξεπερνάει το container */
+    height: auto;     /* κρατάει τις αναλογίες */
+    display: block;   /* αποφεύγουμε το μικρό gap κάτω από inline img */
+}
+
+.discover-button{
+    text-decoration: none;
+    color:white;
+    padding: 6px 16px;
+    border: 2px solid gray;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);/*responsive*/
+    margin-bottom: 2%;
+}
+
+/* responsive text */
+.hero h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* μεγαλώνει σε desktop, μικραίνει σε mobile */
+}
+.hero h2 {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+#home{
+    scroll-margin-top: 100px;
+}
+
+/*ABOUT*/
+
+.about-cover{
+    background-color: whitesmoke;
+}
+
+.about{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about h2,p{
+    color: grey;
+}
+
+.about h1{
+    color: rgb(75, 75, 75);
+}
+
+.about h1 span{
+    color:black;
+}
+
+.axion-core{
+    display: flex;
+}
+
+.axion-core > div{
+    flex: 1;
+}
+
+#about{
+    scroll-margin-top: 100px;
+}
+
+/*PROJECTS*/
+
+.projects-cover{
+    background-color: gainsboro;
+    padding-bottom: 2%;
+}
+
+.projects{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+/*ROOMS*/
+.rooms-cover{
+    padding-top: 20px;
+    background-color: gainsboro;
+    padding-bottom: 15px;
+}
+
+.rooms{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+
+/* Slider */
+
+.rooms-grid{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.room-card {
+    border-radius: 2px;
+    overflow: hidden;
+    background: gainsboro;
+    flex: 1 1 300px;
+}
+
+.room-slider {
+    outline: 2px solid grey;
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.room-slider img {
+    outline: 2px solid grey;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: none;
+}
+
+.room-slider img.active {
+    display: block;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 100;
+}
+
+/*all in room info goes left*/
+.room-info {
+    text-align: left;
+    padding: 8px;
+}
+
+.room-info h3 {
+    margin-bottom: 10px;
+    font-weight: 200 !important;
+    color: rgb(68, 68, 68);
+}
+
+.room-info p{
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+#projects{
+    scroll-margin-top: 100px;
+}
+
+/*CONTACT*/
+.contact-cover{
+    background-color: rgb(36, 36, 61);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.contact{
+    width: 90%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact h4{
+    color: rgb(100, 122, 105);
+}
+
+.contact a{
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.contact a:hover{
+    text-decoration: underline;
+    color:whitesmoke;
+}
+
+.contact .material-symbols-outlined{
+    color: rgb(100, 122, 105);
+}
+
+.contact p{
+    color: whitesmoke;
+}
+
+#contact{
+    scroll-margin-top: 100px;
+}
+
+.footer-cover{
+    background-color: rgb(36, 36, 61);
+    padding-top: 1%;
+}
+
+.footer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.footer h4{
+    color: whitesmoke;
+    font-weight: 100;
+}
+
+
+
+/*FOOTER-TEXT*/
+.footer-text h3{
+    color: whitesmoke;
+}
+
+.footer-text p{
+    color: gainsboro;
+}
+
+.footer-text img{
+    width: 150px;
+    height: auto;
+}
+
+/*FOOTER-INFO*/
+
+
+.footer-title{
+    color: grey !important;
+}
+
+/*FOOTER CONTACT*/
+.material-symbols-outlined{
+    color: rgb(81, 119, 90);
+}
+
+/*MEDIA*/
+@media (max-width: 800px){
+    .projects-img{
+        display: flex;    
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+@media (max-width: 750px){
+
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 9999;
+        font-size:28px;
+        cursor:pointer;
+        margin-right: 5px;
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        gap: 0px;
+    }
+
+    .navbar-logo img{
+        height: 70px;
+        width: auto;
+    }
+
+    .navbar-options {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        background-color: rgb(231, 231, 223);
+        gap: 0;
+        align-items: flex-end;
+        margin-left: 0;
+    }
+
+    .navbar.active .navbar-options {
+        display: flex;
+    }
+
+    .nav-flag{
+        display: none;
+    }
+
+    .nav-flag-hero{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        z-index: 100;
+    }
+
+    .projects-img{
+        display: flex;    
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .axion-core{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .footer > div {
+        width: 100%;
+    }
+
+    .footer > div,
+    .projects-img > div {
+    min-width: 0;
+    }
+
+
+}
